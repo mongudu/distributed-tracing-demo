@@ -1,0 +1,12 @@
+server:
+  port: 9090
+spring:
+  application:
+    name: appA
+  mvc:
+    log-request-details: true
+logging:
+  level:
+    org:
+      springframework:
+        web: TRACE

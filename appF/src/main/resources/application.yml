@@ -1,0 +1,21 @@
+server:
+  port: 9096
+spring:
+  application:
+    name: appF
+  zipkin:
+    base-url: http://127.0.0.1:9411
+    enabled: true
+    sender:
+      type: web
+  mvc:
+    log-request-details: true
+  activemq:
+    broker-url: tcp://localhost:61616
+    password: admin
+    user: admin
+logging:
+  level:
+    org:
+      springframework:
+        web: TRACE

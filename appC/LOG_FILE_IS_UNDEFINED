@@ -1,0 +1,463 @@
+2021-08-23 13:12:01.577  INFO [appC,,] 7948 --- [main] com.example.appc.AppCApplication         : Starting AppCApplication using Java 1.8.0_262 on MURATONGUDU with PID 7948 (C:\JAVA\projects\poc\tracing-zipkin\appC\target\classes started by murat.ongudu in C:\JAVA\projects\poc\tracing-zipkin\appC)
+2021-08-23 13:12:01.582 DEBUG [appC,,] 7948 --- [main] com.example.appc.AppCApplication         : Running with Spring Boot v2.4.5, Spring v5.3.6
+2021-08-23 13:12:01.583  INFO [appC,,] 7948 --- [main] com.example.appc.AppCApplication         : No active profile set, falling back to default profiles: default
+2021-08-23 13:12:03.353  INFO [appC,,] 7948 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=6fe8fee9-8cab-3bd9-af0e-ddd6a11ab607
+2021-08-23 13:12:04.305  INFO [appC,,] 7948 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9093 (http)
+2021-08-23 13:12:04.318  INFO [appC,,] 7948 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-08-23 13:12:04.319  INFO [appC,,] 7948 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.45]
+2021-08-23 13:12:04.505  INFO [appC,,] 7948 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-08-23 13:12:04.505  INFO [appC,,] 7948 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2781 ms
+2021-08-23 13:12:05.106 DEBUG [appC,,] 7948 --- [RestTemplateSender{http://127.0.0.1:9411/api/v2/spans} check()] org.springframework.web.HttpLogging      : HTTP POST http://127.0.0.1:9411/api/v2/spans
+2021-08-23 13:12:05.111 DEBUG [appC,,] 7948 --- [RestTemplateSender{http://127.0.0.1:9411/api/v2/spans} check()] org.springframework.web.HttpLogging      : Accept=[text/plain, application/json, application/*+json, */*]
+2021-08-23 13:12:05.118 DEBUG [appC,,] 7948 --- [RestTemplateSender{http://127.0.0.1:9411/api/v2/spans} check()] org.springframework.web.HttpLogging      : Writing [[B@76a989c7] as "application/json"
+2021-08-23 13:12:05.646  WARN [appC,,] 7948 --- [main] o.s.c.s.a.z.ZipkinAutoConfiguration      : Check result of the [RestTemplateSender{http://127.0.0.1:9411/api/v2/spans}] contains an error [CheckResult{ok=false, error=org.springframework.web.client.ResourceAccessException: I/O error on POST request for "http://127.0.0.1:9411/api/v2/spans": connect timed out; nested exception is java.net.SocketTimeoutException: connect timed out}]
+2021-08-23 13:12:09.069  INFO [appC,,] 7948 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-08-23 13:12:09.123 DEBUG [appC,,] 7948 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2021-08-23 13:12:09.226 TRACE [appC,,] 7948 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	c.e.a.w.JmsMessageProducerController:
+	{GET [/produce-jms-message]}: produceJmsMessage()
+2021-08-23 13:12:09.232 TRACE [appC,,] 7948 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	c.e.a.w.KafkaMessageProducerController:
+	{GET [/produce-kafka-message]}: produceKafkaMessage()
+2021-08-23 13:12:09.236 TRACE [appC,,] 7948 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	c.e.a.w.PingByWebClientController:
+	{GET [/webclient/ping-d]}: pingD()
+	{GET [/webclient/ping-d-and-e]}: pingDAndE()
+2021-08-23 13:12:09.239 TRACE [appC,,] 7948 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	c.e.a.w.PingController:
+	{GET [/ping-d-by-rest-template-exchange]}: pingDByRestTemplateExchange()
+	{GET [/ping-and-tag]}: pingAndTag(String)
+	{GET [/ping]}: ping()
+	{GET [/ping-for-object]}: pingForObject()
+	{GET [/ping-d]}: pingD()
+	{GET [/ping-d-and-e]}: pingDAndE()
+	{GET [/ping-with-new-span]}: pingWithNewSpan()
+2021-08-23 13:12:09.243 TRACE [appC,,] 7948 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	c.e.a.w.PingWithBaggageController:
+	{GET [/ping-d-and-e-with-baggage]}: pingDAndEWithBaggage()
+	{GET [/ping-d-with-baggage]}: pingDWithBaggage()
+2021-08-23 13:12:09.244 TRACE [appC,,] 7948 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	c.e.a.w.TestLogController:
+	{GET [/test/log]}: log()
+2021-08-23 13:12:09.248 TRACE [appC,,] 7948 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	o.s.b.a.w.s.e.BasicErrorController:
+	{ [/error]}: error(HttpServletRequest)
+	{ [/error], produces [text/html]}: errorHtml(HttpServletRequest,HttpServletResponse)
+2021-08-23 13:12:09.254 DEBUG [appC,,] 7948 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 16 mappings in 'requestMappingHandlerMapping'
+2021-08-23 13:12:09.320 DEBUG [appC,,] 7948 --- [main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Detected 0 mappings in 'beanNameHandlerMapping'
+2021-08-23 13:12:09.331 TRACE [appC,,] 7948 --- [main] o.s.w.s.f.support.RouterFunctionMapping  : 0 RouterFunction(s) in 'routerFunctionMapping'
+2021-08-23 13:12:09.351 TRACE [appC,,] 7948 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped [/webjars/**] onto ResourceHttpRequestHandler [Classpath [META-INF/resources/webjars/]]
+2021-08-23 13:12:09.351 TRACE [appC,,] 7948 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped [/**] onto ResourceHttpRequestHandler [Classpath [META-INF/resources/], Classpath [resources/], Classpath [static/], Classpath [public/], ServletContext [/]]
+2021-08-23 13:12:09.351 DEBUG [appC,,] 7948 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2021-08-23 13:12:09.372 DEBUG [appC,,] 7948 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2021-08-23 13:12:14.838  INFO [appC,,] 7948 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9093 (http) with context path ''
+2021-08-23 13:12:17.071  INFO [appC,,] 7948 --- [main] com.example.appc.AppCApplication         : Started AppCApplication in 17.67 seconds (JVM running for 19.954)
+2021-08-23 13:12:26.638  INFO [appC,,] 7948 --- [http-nio-9093-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-08-23 13:12:26.639  INFO [appC,,] 7948 --- [http-nio-9093-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-08-23 13:12:26.639 TRACE [appC,,] 7948 --- [http-nio-9093-exec-2] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.multipart.support.StandardServletMultipartResolver@46c53af8
+2021-08-23 13:12:26.639 TRACE [appC,,] 7948 --- [http-nio-9093-exec-2] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.i18n.AcceptHeaderLocaleResolver@1a9204b4
+2021-08-23 13:12:26.639 TRACE [appC,,] 7948 --- [http-nio-9093-exec-2] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.theme.FixedThemeResolver@18a3e51a
+2021-08-23 13:12:26.641 TRACE [appC,,] 7948 --- [http-nio-9093-exec-2] o.s.web.servlet.DispatcherServlet        : Detected DefaultRequestToViewNameTranslator
+2021-08-23 13:12:26.641 TRACE [appC,,] 7948 --- [http-nio-9093-exec-2] o.s.web.servlet.DispatcherServlet        : Detected SessionFlashMapManager
+2021-08-23 13:12:26.642 DEBUG [appC,,] 7948 --- [http-nio-9093-exec-2] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='true': request parameters and headers will be shown which may lead to unsafe logging of potentially sensitive data
+2021-08-23 13:12:26.642  INFO [appC,,] 7948 --- [http-nio-9093-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2021-08-23 13:12:26.672 TRACE [appC,22b53f9759040369,22b53f9759040369] 7948 --- [http-nio-9093-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/test/log", parameters={}, headers={host:[localhost:9093], connection:[Keep-Alive], user-agent:[Apache-HttpClient/4.5.13 (Java/11.0.11)], accept-encoding:[gzip,deflate]} in DispatcherServlet 'dispatcherServlet'
+2021-08-23 13:12:26.679 TRACE [appC,22b53f9759040369,22b53f9759040369] 7948 --- [http-nio-9093-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.appc.web.TestLogController#log()
+2021-08-23 13:12:26.691 TRACE [appC,22b53f9759040369,22b53f9759040369] 7948 --- [http-nio-9093-exec-2] o.s.web.method.HandlerMethod             : Arguments: []
+2021-08-23 13:12:26.692 ERROR [appC,22b53f9759040369,22b53f9759040369] 7948 --- [http-nio-9093-exec-2] com.example.appc.web.TestLogController   : text
+2021-08-23 13:12:26.692  INFO [appC,22b53f9759040369,22b53f9759040369] 7948 --- [http-nio-9093-exec-2] com.example.appc.web.TestLogController   : text
+2021-08-23 13:12:26.693 DEBUG [appC,22b53f9759040369,22b53f9759040369] 7948 --- [http-nio-9093-exec-2] com.example.appc.web.TestLogController   : text
+2021-08-23 13:12:26.718 DEBUG [appC,22b53f9759040369,22b53f9759040369] 7948 --- [http-nio-9093-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2021-08-23 13:12:26.719 DEBUG [appC,22b53f9759040369,22b53f9759040369] 7948 --- [http-nio-9093-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Nothing to write: null body
+2021-08-23 13:12:26.721 TRACE [appC,22b53f9759040369,22b53f9759040369] 7948 --- [http-nio-9093-exec-2] s.w.s.m.m.a.RequestMappingHandlerAdapter : Applying default cacheSeconds=-1
+2021-08-23 13:12:26.722 TRACE [appC,22b53f9759040369,22b53f9759040369] 7948 --- [http-nio-9093-exec-2] o.s.web.servlet.DispatcherServlet        : No view rendering, null ModelAndView returned.
+2021-08-23 13:12:26.724 DEBUG [appC,22b53f9759040369,22b53f9759040369] 7948 --- [http-nio-9093-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK, headers={}
+2021-08-23 13:12:27.788 DEBUG [appC,,] 7948 --- [AsyncReporter{RestTemplateSender{http://127.0.0.1:9411/api/v2/spans}}] org.springframework.web.HttpLogging      : HTTP POST http://127.0.0.1:9411/api/v2/spans
+2021-08-23 13:12:27.788 DEBUG [appC,,] 7948 --- [AsyncReporter{RestTemplateSender{http://127.0.0.1:9411/api/v2/spans}}] org.springframework.web.HttpLogging      : Accept=[text/plain, application/json, application/*+json, */*]
+2021-08-23 13:12:27.788 DEBUG [appC,,] 7948 --- [AsyncReporter{RestTemplateSender{http://127.0.0.1:9411/api/v2/spans}}] org.springframework.web.HttpLogging      : Writing [[B@4ce88bc] as "application/json"
+2021-08-23 13:12:28.298  WARN [appC,,] 7948 --- [AsyncReporter{RestTemplateSender{http://127.0.0.1:9411/api/v2/spans}}] z.r.AsyncReporter$BoundedAsyncReporter   : Spans were dropped due to exceptions. All subsequent errors will be logged at FINE level.
+2021-08-23 13:12:28.304  WARN [appC,,] 7948 --- [AsyncReporter{RestTemplateSender{http://127.0.0.1:9411/api/v2/spans}}] z.r.AsyncReporter$BoundedAsyncReporter   : Dropped 1 spans due to ResourceAccessException(I/O error on POST request for "http://127.0.0.1:9411/api/v2/spans": connect timed out; nested exception is java.net.SocketTimeoutException: connect timed out)
+
+org.springframework.web.client.ResourceAccessException: I/O error on POST request for "http://127.0.0.1:9411/api/v2/spans": connect timed out; nested exception is java.net.SocketTimeoutException: connect timed out
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:785)
+	at org.springframework.cloud.sleuth.zipkin2.ZipkinRestTemplateWrapper.doExecute(ZipkinRestTemplateWrapper.java:69)
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:660)
+	at org.springframework.cloud.sleuth.zipkin2.RestTemplateSender.post(RestTemplateSender.java:132)
+	at org.springframework.cloud.sleuth.zipkin2.RestTemplateSender$HttpPostCall.doExecute(RestTemplateSender.java:150)
+	at org.springframework.cloud.sleuth.zipkin2.RestTemplateSender$HttpPostCall.doExecute(RestTemplateSender.java:140)
+	at zipkin2.Call$Base.execute(Call.java:391)
+	at zipkin2.reporter.AsyncReporter$BoundedAsyncReporter.flush(AsyncReporter.java:299)
+	at zipkin2.reporter.AsyncReporter$Flusher.run(AsyncReporter.java:378)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.net.SocketTimeoutException: connect timed out
+	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:85)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:607)
+	at sun.net.NetworkClient.doConnect(NetworkClient.java:175)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:463)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:558)
+	at sun.net.www.http.HttpClient.<init>(HttpClient.java:242)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:339)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:357)
+	at sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:1226)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1162)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1056)
+	at sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:990)
+	at org.springframework.http.client.SimpleBufferingClientHttpRequest.executeInternal(SimpleBufferingClientHttpRequest.java:76)
+	at org.springframework.http.client.AbstractBufferingClientHttpRequest.executeInternal(AbstractBufferingClientHttpRequest.java:48)
+	at org.springframework.http.client.AbstractClientHttpRequest.execute(AbstractClientHttpRequest.java:66)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:776)
+	... 9 common frames omitted
+
+2021-08-23 13:12:37.841 TRACE [appC,d03f8e38a5dd6924,d03f8e38a5dd6924] 7948 --- [http-nio-9093-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/test/log", parameters={}, headers={host:[localhost:9093], connection:[Keep-Alive], user-agent:[Apache-HttpClient/4.5.13 (Java/11.0.11)], accept-encoding:[gzip,deflate]} in DispatcherServlet 'dispatcherServlet'
+2021-08-23 13:12:37.842 TRACE [appC,d03f8e38a5dd6924,d03f8e38a5dd6924] 7948 --- [http-nio-9093-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.appc.web.TestLogController#log()
+2021-08-23 13:12:37.842 TRACE [appC,d03f8e38a5dd6924,d03f8e38a5dd6924] 7948 --- [http-nio-9093-exec-5] o.s.web.method.HandlerMethod             : Arguments: []
+2021-08-23 13:12:37.843 ERROR [appC,d03f8e38a5dd6924,d03f8e38a5dd6924] 7948 --- [http-nio-9093-exec-5] com.example.appc.web.TestLogController   : text
+2021-08-23 13:12:37.843  INFO [appC,d03f8e38a5dd6924,d03f8e38a5dd6924] 7948 --- [http-nio-9093-exec-5] com.example.appc.web.TestLogController   : text
+2021-08-23 13:12:37.843 DEBUG [appC,d03f8e38a5dd6924,d03f8e38a5dd6924] 7948 --- [http-nio-9093-exec-5] com.example.appc.web.TestLogController   : text
+2021-08-23 13:12:37.843 DEBUG [appC,d03f8e38a5dd6924,d03f8e38a5dd6924] 7948 --- [http-nio-9093-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2021-08-23 13:12:37.844 DEBUG [appC,d03f8e38a5dd6924,d03f8e38a5dd6924] 7948 --- [http-nio-9093-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Nothing to write: null body
+2021-08-23 13:12:37.844 TRACE [appC,d03f8e38a5dd6924,d03f8e38a5dd6924] 7948 --- [http-nio-9093-exec-5] s.w.s.m.m.a.RequestMappingHandlerAdapter : Applying default cacheSeconds=-1
+2021-08-23 13:12:37.844 TRACE [appC,d03f8e38a5dd6924,d03f8e38a5dd6924] 7948 --- [http-nio-9093-exec-5] o.s.web.servlet.DispatcherServlet        : No view rendering, null ModelAndView returned.
+2021-08-23 13:12:37.844 DEBUG [appC,d03f8e38a5dd6924,d03f8e38a5dd6924] 7948 --- [http-nio-9093-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK, headers={}
+2021-08-23 13:12:38.375 DEBUG [appC,,] 7948 --- [AsyncReporter{RestTemplateSender{http://127.0.0.1:9411/api/v2/spans}}] org.springframework.web.HttpLogging      : HTTP POST http://127.0.0.1:9411/api/v2/spans
+2021-08-23 13:12:38.375 DEBUG [appC,,] 7948 --- [AsyncReporter{RestTemplateSender{http://127.0.0.1:9411/api/v2/spans}}] org.springframework.web.HttpLogging      : Accept=[text/plain, application/json, application/*+json, */*]
+2021-08-23 13:12:38.375 DEBUG [appC,,] 7948 --- [AsyncReporter{RestTemplateSender{http://127.0.0.1:9411/api/v2/spans}}] org.springframework.web.HttpLogging      : Writing [[B@3b1e717c] as "application/json"
+2021-08-23 13:13:13.894 ERROR [appC,58d0f2eba1551b90,58d0f2eba1551b90] 7948 --- [http-nio-9093-exec-8] com.example.appc.web.TestLogController   : text
+2021-08-23 13:13:13.895  INFO [appC,58d0f2eba1551b90,58d0f2eba1551b90] 7948 --- [http-nio-9093-exec-8] com.example.appc.web.TestLogController   : text
+2021-08-23 13:13:29.763  INFO [appC,,] 7948 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-08-23 15:54:28.732  INFO [appC,,] 14872 --- [main] com.example.appc.AppCApplication         : Starting AppCApplication using Java 1.8.0_262 on MURATONGUDU with PID 14872 (C:\JAVA\projects\poc\tracing-zipkin\appC\target\classes started by murat.ongudu in C:\JAVA\projects\poc\tracing-zipkin\appC)
+2021-08-23 15:54:28.741  INFO [appC,,] 14872 --- [main] com.example.appc.AppCApplication         : No active profile set, falling back to default profiles: default
+2021-08-23 15:54:33.337  INFO [appC,,] 14872 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=6fe8fee9-8cab-3bd9-af0e-ddd6a11ab607
+2021-08-23 15:54:36.037  INFO [appC,,] 14872 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9093 (http)
+2021-08-23 15:54:36.064  INFO [appC,,] 14872 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-08-23 15:54:36.065  INFO [appC,,] 14872 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.45]
+2021-08-23 15:54:36.407  INFO [appC,,] 14872 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-08-23 15:54:36.407  INFO [appC,,] 14872 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 7407 ms
+2021-08-23 15:54:37.542 DEBUG [appC,,] 14872 --- [RestTemplateSender{http://127.0.0.1:9411/api/v2/spans} check()] org.springframework.web.HttpLogging      : HTTP POST http://127.0.0.1:9411/api/v2/spans
+2021-08-23 15:54:37.557 DEBUG [appC,,] 14872 --- [RestTemplateSender{http://127.0.0.1:9411/api/v2/spans} check()] org.springframework.web.HttpLogging      : Accept=[text/plain, application/json, application/*+json, */*]
+2021-08-23 15:54:37.571 DEBUG [appC,,] 14872 --- [RestTemplateSender{http://127.0.0.1:9411/api/v2/spans} check()] org.springframework.web.HttpLogging      : Writing [[B@7123d10d] as "application/json"
+2021-08-23 15:54:37.651 DEBUG [appC,,] 14872 --- [RestTemplateSender{http://127.0.0.1:9411/api/v2/spans} check()] org.springframework.web.HttpLogging      : Response 202 ACCEPTED
+2021-08-23 15:54:42.312  INFO [appC,,] 14872 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-08-23 15:54:42.368 DEBUG [appC,,] 14872 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2021-08-23 15:54:42.498 TRACE [appC,,] 14872 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	c.e.a.w.JmsMessageProducerController:
+	{GET [/produce-jms-message]}: produceJmsMessage()
+2021-08-23 15:54:42.500 TRACE [appC,,] 14872 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	c.e.a.w.KafkaMessageProducerController:
+	{GET [/produce-kafka-message]}: produceKafkaMessage()
+2021-08-23 15:54:42.501 TRACE [appC,,] 14872 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	c.e.a.w.PingByWebClientController:
+	{GET [/webclient/ping-d]}: pingD()
+	{GET [/webclient/ping-d-and-e]}: pingDAndE()
+2021-08-23 15:54:42.504 TRACE [appC,,] 14872 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	c.e.a.w.PingController:
+	{GET [/ping-d]}: pingD()
+	{GET [/ping-d-and-e]}: pingDAndE()
+	{GET [/ping-and-tag]}: pingAndTag(String)
+	{GET [/ping]}: ping()
+	{GET [/ping-with-new-span]}: pingWithNewSpan()
+	{GET [/ping-for-object]}: pingForObject()
+	{GET [/ping-d-by-rest-template-exchange]}: pingDByRestTemplateExchange()
+2021-08-23 15:54:42.509 TRACE [appC,,] 14872 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	c.e.a.w.PingWithBaggageController:
+	{GET [/ping-d-with-baggage]}: pingDWithBaggage()
+	{GET [/ping-d-and-e-with-baggage]}: pingDAndEWithBaggage()
+2021-08-23 15:54:42.511 TRACE [appC,,] 14872 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	c.e.a.w.TestLogController:
+	{GET [/test/log]}: log()
+2021-08-23 15:54:42.515 TRACE [appC,,] 14872 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	o.s.b.a.w.s.e.BasicErrorController:
+	{ [/error]}: error(HttpServletRequest)
+	{ [/error], produces [text/html]}: errorHtml(HttpServletRequest,HttpServletResponse)
+2021-08-23 15:54:42.520 DEBUG [appC,,] 14872 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 16 mappings in 'requestMappingHandlerMapping'
+2021-08-23 15:54:42.608 DEBUG [appC,,] 14872 --- [main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Detected 0 mappings in 'beanNameHandlerMapping'
+2021-08-23 15:54:42.628 TRACE [appC,,] 14872 --- [main] o.s.w.s.f.support.RouterFunctionMapping  : 0 RouterFunction(s) in 'routerFunctionMapping'
+2021-08-23 15:54:42.656 TRACE [appC,,] 14872 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped [/webjars/**] onto ResourceHttpRequestHandler [Classpath [META-INF/resources/webjars/]]
+2021-08-23 15:54:42.657 TRACE [appC,,] 14872 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped [/**] onto ResourceHttpRequestHandler [Classpath [META-INF/resources/], Classpath [resources/], Classpath [static/], Classpath [public/], ServletContext [/]]
+2021-08-23 15:54:42.657 DEBUG [appC,,] 14872 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2021-08-23 15:54:42.690 DEBUG [appC,,] 14872 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2021-08-23 15:54:47.841  INFO [appC,,] 14872 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9093 (http) with context path ''
+2021-08-23 15:54:50.438  INFO [appC,,] 14872 --- [main] com.example.appc.AppCApplication         : Started AppCApplication in 24.129 seconds (JVM running for 26.185)
+2021-08-23 16:02:45.128  INFO [appC,,] 14872 --- [http-nio-9093-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-08-23 16:02:45.129  INFO [appC,,] 14872 --- [http-nio-9093-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-08-23 16:02:45.130 TRACE [appC,,] 14872 --- [http-nio-9093-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.multipart.support.StandardServletMultipartResolver@68bc9430
+2021-08-23 16:02:45.130 TRACE [appC,,] 14872 --- [http-nio-9093-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.i18n.AcceptHeaderLocaleResolver@6de6a1b2
+2021-08-23 16:02:45.131 TRACE [appC,,] 14872 --- [http-nio-9093-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.theme.FixedThemeResolver@73fa6243
+2021-08-23 16:02:45.133 TRACE [appC,,] 14872 --- [http-nio-9093-exec-1] o.s.web.servlet.DispatcherServlet        : Detected DefaultRequestToViewNameTranslator
+2021-08-23 16:02:45.134 TRACE [appC,,] 14872 --- [http-nio-9093-exec-1] o.s.web.servlet.DispatcherServlet        : Detected SessionFlashMapManager
+2021-08-23 16:02:45.134 DEBUG [appC,,] 14872 --- [http-nio-9093-exec-1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='true': request parameters and headers will be shown which may lead to unsafe logging of potentially sensitive data
+2021-08-23 16:02:45.135  INFO [appC,,] 14872 --- [http-nio-9093-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 6 ms
+2021-08-23 16:02:45.184 TRACE [appC,507c4263e5903f54,507c4263e5903f54] 14872 --- [http-nio-9093-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/ping", parameters={}, headers={host:[localhost:9093], connection:[Keep-Alive], user-agent:[Apache-HttpClient/4.5.13 (Java/11.0.11)], accept-encoding:[gzip,deflate]} in DispatcherServlet 'dispatcherServlet'
+2021-08-23 16:02:45.191 TRACE [appC,507c4263e5903f54,507c4263e5903f54] 14872 --- [http-nio-9093-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.appc.web.PingController#ping()
+2021-08-23 16:02:45.209 TRACE [appC,507c4263e5903f54,507c4263e5903f54] 14872 --- [http-nio-9093-exec-1] o.s.web.method.HandlerMethod             : Arguments: []
+2021-08-23 16:02:45.217  INFO [appC,507c4263e5903f54,507c4263e5903f54] 14872 --- [http-nio-9093-exec-1] com.example.appc.web.PingController      : test
+2021-08-23 16:02:45.233 DEBUG [appC,507c4263e5903f54,507c4263e5903f54] 14872 --- [http-nio-9093-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Using 'text/plain', given [*/*] and supported [text/plain, */*, text/plain, */*, application/json, application/*+json, application/json, application/*+json]
+2021-08-23 16:02:45.234 TRACE [appC,507c4263e5903f54,507c4263e5903f54] 14872 --- [http-nio-9093-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Writing ["pong"]
+2021-08-23 16:02:45.249 TRACE [appC,507c4263e5903f54,507c4263e5903f54] 14872 --- [http-nio-9093-exec-1] s.w.s.m.m.a.RequestMappingHandlerAdapter : Applying default cacheSeconds=-1
+2021-08-23 16:02:45.249 TRACE [appC,507c4263e5903f54,507c4263e5903f54] 14872 --- [http-nio-9093-exec-1] o.s.web.servlet.DispatcherServlet        : No view rendering, null ModelAndView returned.
+2021-08-23 16:02:45.252 DEBUG [appC,507c4263e5903f54,507c4263e5903f54] 14872 --- [http-nio-9093-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK, headers={Content-Type:[text/plain;charset=UTF-8], Content-Length:[4], Date:[Mon, 23 Aug 2021 13:02:45 GMT], Keep-Alive:[timeout=60], Connection:[keep-alive]}
+2021-08-23 16:02:46.508 DEBUG [appC,,] 14872 --- [AsyncReporter{RestTemplateSender{http://127.0.0.1:9411/api/v2/spans}}] org.springframework.web.HttpLogging      : HTTP POST http://127.0.0.1:9411/api/v2/spans
+2021-08-23 16:02:46.512 DEBUG [appC,,] 14872 --- [AsyncReporter{RestTemplateSender{http://127.0.0.1:9411/api/v2/spans}}] org.springframework.web.HttpLogging      : Accept=[text/plain, application/json, application/*+json, */*]
+2021-08-23 16:02:46.512 DEBUG [appC,,] 14872 --- [AsyncReporter{RestTemplateSender{http://127.0.0.1:9411/api/v2/spans}}] org.springframework.web.HttpLogging      : Writing [[B@15c90b73] as "application/json"
+2021-08-23 16:02:46.588 DEBUG [appC,,] 14872 --- [AsyncReporter{RestTemplateSender{http://127.0.0.1:9411/api/v2/spans}}] org.springframework.web.HttpLogging      : Response 202 ACCEPTED
+2021-08-23 16:04:48.485 TRACE [appC,ab5089687b033471,ab5089687b033471] 14872 --- [http-nio-9093-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/ping-d", parameters={}, headers={host:[localhost:9093], connection:[Keep-Alive], user-agent:[Apache-HttpClient/4.5.13 (Java/11.0.11)], accept-encoding:[gzip,deflate]} in DispatcherServlet 'dispatcherServlet'
+2021-08-23 16:04:48.486 TRACE [appC,ab5089687b033471,ab5089687b033471] 14872 --- [http-nio-9093-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.appc.web.PingController#pingD()
+2021-08-23 16:04:48.486 TRACE [appC,ab5089687b033471,ab5089687b033471] 14872 --- [http-nio-9093-exec-4] o.s.web.method.HandlerMethod             : Arguments: []
+2021-08-23 16:04:48.487  INFO [appC,ab5089687b033471,ab5089687b033471] 14872 --- [http-nio-9093-exec-4] com.example.appc.web.PingController      : ping-d called
+2021-08-23 16:04:48.503 DEBUG [appC,ab5089687b033471,ab5089687b033471] 14872 --- [http-nio-9093-exec-4] o.s.web.client.RestTemplate              : HTTP GET http://localhost:9094/ping
+2021-08-23 16:04:48.504 DEBUG [appC,ab5089687b033471,ab5089687b033471] 14872 --- [http-nio-9093-exec-4] o.s.web.client.RestTemplate              : Accept=[text/plain, application/json, application/*+json, */*]
+2021-08-23 16:04:48.704 DEBUG [appC,ab5089687b033471,ab5089687b033471] 14872 --- [http-nio-9093-exec-4] o.s.web.client.RestTemplate              : Response 200 OK
+2021-08-23 16:04:48.705 DEBUG [appC,ab5089687b033471,ab5089687b033471] 14872 --- [http-nio-9093-exec-4] o.s.web.client.RestTemplate              : Reading to [java.lang.String] as "text/plain;charset=UTF-8"
+2021-08-23 16:04:48.706 DEBUG [appC,ab5089687b033471,ab5089687b033471] 14872 --- [http-nio-9093-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Using 'text/plain', given [*/*] and supported [text/plain, */*, text/plain, */*, application/json, application/*+json, application/json, application/*+json]
+2021-08-23 16:04:48.707 TRACE [appC,ab5089687b033471,ab5089687b033471] 14872 --- [http-nio-9093-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Writing ["pong"]
+2021-08-23 16:04:48.708 TRACE [appC,ab5089687b033471,ab5089687b033471] 14872 --- [http-nio-9093-exec-4] s.w.s.m.m.a.RequestMappingHandlerAdapter : Applying default cacheSeconds=-1
+2021-08-23 16:04:48.708 TRACE [appC,ab5089687b033471,ab5089687b033471] 14872 --- [http-nio-9093-exec-4] o.s.web.servlet.DispatcherServlet        : No view rendering, null ModelAndView returned.
+2021-08-23 16:04:48.709 DEBUG [appC,ab5089687b033471,ab5089687b033471] 14872 --- [http-nio-9093-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK, headers={Content-Type:[text/plain;charset=UTF-8], Content-Length:[4], Date:[Mon, 23 Aug 2021 13:04:48 GMT], Keep-Alive:[timeout=60], Connection:[keep-alive]}
+2021-08-23 16:04:49.001 DEBUG [appC,,] 14872 --- [AsyncReporter{RestTemplateSender{http://127.0.0.1:9411/api/v2/spans}}] org.springframework.web.HttpLogging      : HTTP POST http://127.0.0.1:9411/api/v2/spans
+2021-08-23 16:04:49.002 DEBUG [appC,,] 14872 --- [AsyncReporter{RestTemplateSender{http://127.0.0.1:9411/api/v2/spans}}] org.springframework.web.HttpLogging      : Accept=[text/plain, application/json, application/*+json, */*]
+2021-08-23 16:04:49.002 DEBUG [appC,,] 14872 --- [AsyncReporter{RestTemplateSender{http://127.0.0.1:9411/api/v2/spans}}] org.springframework.web.HttpLogging      : Writing [[B@5af5cead] as "application/json"
+2021-08-23 16:04:49.016 DEBUG [appC,,] 14872 --- [AsyncReporter{RestTemplateSender{http://127.0.0.1:9411/api/v2/spans}}] org.springframework.web.HttpLogging      : Response 202 ACCEPTED
+2021-08-23 16:05:04.374 TRACE [appC,e0c0a4320f8902fb,e0c0a4320f8902fb] 14872 --- [http-nio-9093-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/ping-d-and-e", parameters={}, headers={host:[localhost:9093], connection:[Keep-Alive], user-agent:[Apache-HttpClient/4.5.13 (Java/11.0.11)], accept-encoding:[gzip,deflate]} in DispatcherServlet 'dispatcherServlet'
+2021-08-23 16:05:04.374 TRACE [appC,e0c0a4320f8902fb,e0c0a4320f8902fb] 14872 --- [http-nio-9093-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.appc.web.PingController#pingDAndE()
+2021-08-23 16:05:04.374 TRACE [appC,e0c0a4320f8902fb,e0c0a4320f8902fb] 14872 --- [http-nio-9093-exec-5] o.s.web.method.HandlerMethod             : Arguments: []
+2021-08-23 16:05:04.375  INFO [appC,e0c0a4320f8902fb,e0c0a4320f8902fb] 14872 --- [http-nio-9093-exec-5] com.example.appc.web.PingController      : ping-d-and-e called
+2021-08-23 16:05:04.375 DEBUG [appC,e0c0a4320f8902fb,e0c0a4320f8902fb] 14872 --- [http-nio-9093-exec-5] o.s.web.client.RestTemplate              : HTTP GET http://localhost:9094/ping-e
+2021-08-23 16:05:04.375 DEBUG [appC,e0c0a4320f8902fb,e0c0a4320f8902fb] 14872 --- [http-nio-9093-exec-5] o.s.web.client.RestTemplate              : Accept=[text/plain, application/json, application/*+json, */*]
+2021-08-23 16:05:04.521 DEBUG [appC,e0c0a4320f8902fb,e0c0a4320f8902fb] 14872 --- [http-nio-9093-exec-5] o.s.web.client.RestTemplate              : Response 200 OK
+2021-08-23 16:05:04.522 DEBUG [appC,e0c0a4320f8902fb,e0c0a4320f8902fb] 14872 --- [http-nio-9093-exec-5] o.s.web.client.RestTemplate              : Reading to [java.lang.String] as "text/plain;charset=UTF-8"
+2021-08-23 16:05:04.522 DEBUG [appC,e0c0a4320f8902fb,e0c0a4320f8902fb] 14872 --- [http-nio-9093-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Using 'text/plain', given [*/*] and supported [text/plain, */*, text/plain, */*, application/json, application/*+json, application/json, application/*+json]
+2021-08-23 16:05:04.522 TRACE [appC,e0c0a4320f8902fb,e0c0a4320f8902fb] 14872 --- [http-nio-9093-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Writing ["pong"]
+2021-08-23 16:05:04.523 TRACE [appC,e0c0a4320f8902fb,e0c0a4320f8902fb] 14872 --- [http-nio-9093-exec-5] s.w.s.m.m.a.RequestMappingHandlerAdapter : Applying default cacheSeconds=-1
+2021-08-23 16:05:04.524 TRACE [appC,e0c0a4320f8902fb,e0c0a4320f8902fb] 14872 --- [http-nio-9093-exec-5] o.s.web.servlet.DispatcherServlet        : No view rendering, null ModelAndView returned.
+2021-08-23 16:05:04.524 DEBUG [appC,e0c0a4320f8902fb,e0c0a4320f8902fb] 14872 --- [http-nio-9093-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK, headers={Content-Type:[text/plain;charset=UTF-8], Content-Length:[4], Date:[Mon, 23 Aug 2021 13:05:04 GMT], Keep-Alive:[timeout=60], Connection:[keep-alive]}
+2021-08-23 16:05:05.154 DEBUG [appC,,] 14872 --- [AsyncReporter{RestTemplateSender{http://127.0.0.1:9411/api/v2/spans}}] org.springframework.web.HttpLogging      : HTTP POST http://127.0.0.1:9411/api/v2/spans
+2021-08-23 16:05:05.155 DEBUG [appC,,] 14872 --- [AsyncReporter{RestTemplateSender{http://127.0.0.1:9411/api/v2/spans}}] org.springframework.web.HttpLogging      : Accept=[text/plain, application/json, application/*+json, */*]
+2021-08-23 16:05:05.155 DEBUG [appC,,] 14872 --- [AsyncReporter{RestTemplateSender{http://127.0.0.1:9411/api/v2/spans}}] org.springframework.web.HttpLogging      : Writing [[B@2c9e0b66] as "application/json"
+2021-08-23 16:05:05.169 DEBUG [appC,,] 14872 --- [AsyncReporter{RestTemplateSender{http://127.0.0.1:9411/api/v2/spans}}] org.springframework.web.HttpLogging      : Response 202 ACCEPTED
+2021-08-23 16:15:14.750 TRACE [appC,dd7ae713dd6bbe08,dd7ae713dd6bbe08] 14872 --- [http-nio-9093-exec-8] o.s.web.servlet.DispatcherServlet        : GET "/ping", parameters={}, headers={host:[localhost:9093], connection:[Keep-Alive], user-agent:[Apache-HttpClient/4.5.13 (Java/11.0.11)], accept-encoding:[gzip,deflate]} in DispatcherServlet 'dispatcherServlet'
+2021-08-23 16:15:14.750 TRACE [appC,dd7ae713dd6bbe08,dd7ae713dd6bbe08] 14872 --- [http-nio-9093-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.appc.web.PingController#ping()
+2021-08-23 16:15:14.751 TRACE [appC,dd7ae713dd6bbe08,dd7ae713dd6bbe08] 14872 --- [http-nio-9093-exec-8] o.s.web.method.HandlerMethod             : Arguments: []
+2021-08-23 16:15:14.751  INFO [appC,dd7ae713dd6bbe08,dd7ae713dd6bbe08] 14872 --- [http-nio-9093-exec-8] com.example.appc.web.PingController      : test
+2021-08-23 16:15:14.751 DEBUG [appC,dd7ae713dd6bbe08,dd7ae713dd6bbe08] 14872 --- [http-nio-9093-exec-8] m.m.a.RequestResponseBodyMethodProcessor : Using 'text/plain', given [*/*] and supported [text/plain, */*, text/plain, */*, application/json, application/*+json, application/json, application/*+json]
+2021-08-23 16:15:14.751 TRACE [appC,dd7ae713dd6bbe08,dd7ae713dd6bbe08] 14872 --- [http-nio-9093-exec-8] m.m.a.RequestResponseBodyMethodProcessor : Writing ["pong"]
+2021-08-23 16:15:14.752 TRACE [appC,dd7ae713dd6bbe08,dd7ae713dd6bbe08] 14872 --- [http-nio-9093-exec-8] s.w.s.m.m.a.RequestMappingHandlerAdapter : Applying default cacheSeconds=-1
+2021-08-23 16:15:14.752 TRACE [appC,dd7ae713dd6bbe08,dd7ae713dd6bbe08] 14872 --- [http-nio-9093-exec-8] o.s.web.servlet.DispatcherServlet        : No view rendering, null ModelAndView returned.
+2021-08-23 16:15:14.752 DEBUG [appC,dd7ae713dd6bbe08,dd7ae713dd6bbe08] 14872 --- [http-nio-9093-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK, headers={Content-Type:[text/plain;charset=UTF-8], Content-Length:[4], Date:[Mon, 23 Aug 2021 13:15:14 GMT], Keep-Alive:[timeout=60], Connection:[keep-alive]}
+2021-08-23 16:15:15.115 DEBUG [appC,,] 14872 --- [AsyncReporter{RestTemplateSender{http://127.0.0.1:9411/api/v2/spans}}] org.springframework.web.HttpLogging      : HTTP POST http://127.0.0.1:9411/api/v2/spans
+2021-08-23 16:15:15.116 DEBUG [appC,,] 14872 --- [AsyncReporter{RestTemplateSender{http://127.0.0.1:9411/api/v2/spans}}] org.springframework.web.HttpLogging      : Accept=[text/plain, application/json, application/*+json, */*]
+2021-08-23 16:15:15.116 DEBUG [appC,,] 14872 --- [AsyncReporter{RestTemplateSender{http://127.0.0.1:9411/api/v2/spans}}] org.springframework.web.HttpLogging      : Writing [[B@2fa1f00a] as "application/json"
+2021-08-23 16:15:15.127 DEBUG [appC,,] 14872 --- [AsyncReporter{RestTemplateSender{http://127.0.0.1:9411/api/v2/spans}}] org.springframework.web.HttpLogging      : Response 202 ACCEPTED
+2021-08-23 16:15:27.566 TRACE [appC,64ba6da9581b6d46,64ba6da9581b6d46] 14872 --- [http-nio-9093-exec-9] o.s.web.servlet.DispatcherServlet        : GET "/ping", parameters={}, headers={host:[localhost:9093], connection:[Keep-Alive], user-agent:[Apache-HttpClient/4.5.13 (Java/11.0.11)], accept-encoding:[gzip,deflate]} in DispatcherServlet 'dispatcherServlet'
+2021-08-23 16:15:27.567 TRACE [appC,64ba6da9581b6d46,64ba6da9581b6d46] 14872 --- [http-nio-9093-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.appc.web.PingController#ping()
+2021-08-23 16:15:27.567 TRACE [appC,64ba6da9581b6d46,64ba6da9581b6d46] 14872 --- [http-nio-9093-exec-9] o.s.web.method.HandlerMethod             : Arguments: []
+2021-08-23 16:15:27.567  INFO [appC,64ba6da9581b6d46,64ba6da9581b6d46] 14872 --- [http-nio-9093-exec-9] com.example.appc.web.PingController      : test
+2021-08-23 16:15:27.567 DEBUG [appC,64ba6da9581b6d46,64ba6da9581b6d46] 14872 --- [http-nio-9093-exec-9] m.m.a.RequestResponseBodyMethodProcessor : Using 'text/plain', given [*/*] and supported [text/plain, */*, text/plain, */*, application/json, application/*+json, application/json, application/*+json]
+2021-08-23 16:15:27.568 TRACE [appC,64ba6da9581b6d46,64ba6da9581b6d46] 14872 --- [http-nio-9093-exec-9] m.m.a.RequestResponseBodyMethodProcessor : Writing ["pong"]
+2021-08-23 16:15:27.569 TRACE [appC,64ba6da9581b6d46,64ba6da9581b6d46] 14872 --- [http-nio-9093-exec-9] s.w.s.m.m.a.RequestMappingHandlerAdapter : Applying default cacheSeconds=-1
+2021-08-23 16:15:27.569 TRACE [appC,64ba6da9581b6d46,64ba6da9581b6d46] 14872 --- [http-nio-9093-exec-9] o.s.web.servlet.DispatcherServlet        : No view rendering, null ModelAndView returned.
+2021-08-23 16:15:27.569 DEBUG [appC,64ba6da9581b6d46,64ba6da9581b6d46] 14872 --- [http-nio-9093-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 200 OK, headers={Content-Type:[text/plain;charset=UTF-8], Content-Length:[4], Date:[Mon, 23 Aug 2021 13:15:27 GMT], Keep-Alive:[timeout=60], Connection:[keep-alive]}
+2021-08-23 16:15:28.247 DEBUG [appC,,] 14872 --- [AsyncReporter{RestTemplateSender{http://127.0.0.1:9411/api/v2/spans}}] org.springframework.web.HttpLogging      : HTTP POST http://127.0.0.1:9411/api/v2/spans
+2021-08-23 16:15:28.247 DEBUG [appC,,] 14872 --- [AsyncReporter{RestTemplateSender{http://127.0.0.1:9411/api/v2/spans}}] org.springframework.web.HttpLogging      : Accept=[text/plain, application/json, application/*+json, */*]
+2021-08-23 16:15:28.248 DEBUG [appC,,] 14872 --- [AsyncReporter{RestTemplateSender{http://127.0.0.1:9411/api/v2/spans}}] org.springframework.web.HttpLogging      : Writing [[B@726ef41e] as "application/json"
+2021-08-23 16:15:28.257 DEBUG [appC,,] 14872 --- [AsyncReporter{RestTemplateSender{http://127.0.0.1:9411/api/v2/spans}}] org.springframework.web.HttpLogging      : Response 202 ACCEPTED
+2021-08-23 16:17:26.994 TRACE [appC,6142598e12353a5a,6142598e12353a5a] 14872 --- [http-nio-9093-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/ping-d-and-e", parameters={}, headers={host:[localhost:9093], connection:[Keep-Alive], user-agent:[Apache-HttpClient/4.5.13 (Java/11.0.11)], accept-encoding:[gzip,deflate]} in DispatcherServlet 'dispatcherServlet'
+2021-08-23 16:17:26.995 TRACE [appC,6142598e12353a5a,6142598e12353a5a] 14872 --- [http-nio-9093-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.appc.web.PingController#pingDAndE()
+2021-08-23 16:17:26.995 TRACE [appC,6142598e12353a5a,6142598e12353a5a] 14872 --- [http-nio-9093-exec-1] o.s.web.method.HandlerMethod             : Arguments: []
+2021-08-23 16:17:26.995  INFO [appC,6142598e12353a5a,6142598e12353a5a] 14872 --- [http-nio-9093-exec-1] com.example.appc.web.PingController      : ping-d-and-e called
+2021-08-23 16:17:26.996 DEBUG [appC,6142598e12353a5a,6142598e12353a5a] 14872 --- [http-nio-9093-exec-1] o.s.web.client.RestTemplate              : HTTP GET http://localhost:9094/ping-e
+2021-08-23 16:17:26.996 DEBUG [appC,6142598e12353a5a,6142598e12353a5a] 14872 --- [http-nio-9093-exec-1] o.s.web.client.RestTemplate              : Accept=[text/plain, application/json, application/*+json, */*]
+2021-08-23 16:17:27.010 DEBUG [appC,6142598e12353a5a,6142598e12353a5a] 14872 --- [http-nio-9093-exec-1] o.s.web.client.RestTemplate              : Response 200 OK
+2021-08-23 16:17:27.010 DEBUG [appC,6142598e12353a5a,6142598e12353a5a] 14872 --- [http-nio-9093-exec-1] o.s.web.client.RestTemplate              : Reading to [java.lang.String] as "text/plain;charset=UTF-8"
+2021-08-23 16:17:27.011 DEBUG [appC,6142598e12353a5a,6142598e12353a5a] 14872 --- [http-nio-9093-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Using 'text/plain', given [*/*] and supported [text/plain, */*, text/plain, */*, application/json, application/*+json, application/json, application/*+json]
+2021-08-23 16:17:27.011 TRACE [appC,6142598e12353a5a,6142598e12353a5a] 14872 --- [http-nio-9093-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Writing ["pong"]
+2021-08-23 16:17:27.012 TRACE [appC,6142598e12353a5a,6142598e12353a5a] 14872 --- [http-nio-9093-exec-1] s.w.s.m.m.a.RequestMappingHandlerAdapter : Applying default cacheSeconds=-1
+2021-08-23 16:17:27.012 TRACE [appC,6142598e12353a5a,6142598e12353a5a] 14872 --- [http-nio-9093-exec-1] o.s.web.servlet.DispatcherServlet        : No view rendering, null ModelAndView returned.
+2021-08-23 16:17:27.012 DEBUG [appC,6142598e12353a5a,6142598e12353a5a] 14872 --- [http-nio-9093-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK, headers={Content-Type:[text/plain;charset=UTF-8], Content-Length:[4], Date:[Mon, 23 Aug 2021 13:17:27 GMT], Keep-Alive:[timeout=60], Connection:[keep-alive]}
+2021-08-23 16:17:27.246 DEBUG [appC,,] 14872 --- [AsyncReporter{RestTemplateSender{http://127.0.0.1:9411/api/v2/spans}}] org.springframework.web.HttpLogging      : HTTP POST http://127.0.0.1:9411/api/v2/spans
+2021-08-23 16:17:27.246 DEBUG [appC,,] 14872 --- [AsyncReporter{RestTemplateSender{http://127.0.0.1:9411/api/v2/spans}}] org.springframework.web.HttpLogging      : Accept=[text/plain, application/json, application/*+json, */*]
+2021-08-23 16:17:27.247 DEBUG [appC,,] 14872 --- [AsyncReporter{RestTemplateSender{http://127.0.0.1:9411/api/v2/spans}}] org.springframework.web.HttpLogging      : Writing [[B@61adc58] as "application/json"
+2021-08-23 16:17:27.252 DEBUG [appC,,] 14872 --- [AsyncReporter{RestTemplateSender{http://127.0.0.1:9411/api/v2/spans}}] org.springframework.web.HttpLogging      : Response 202 ACCEPTED
+2021-08-23 16:20:16.906 TRACE [appC,df2861aa9a8c8fd6,df2861aa9a8c8fd6] 14872 --- [http-nio-9093-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/produce-jms-message", parameters={}, headers={host:[localhost:9093], connection:[Keep-Alive], user-agent:[Apache-HttpClient/4.5.13 (Java/11.0.11)], accept-encoding:[gzip,deflate]} in DispatcherServlet 'dispatcherServlet'
+2021-08-23 16:20:16.906 TRACE [appC,df2861aa9a8c8fd6,df2861aa9a8c8fd6] 14872 --- [http-nio-9093-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.appc.web.JmsMessageProducerController#produceJmsMessage()
+2021-08-23 16:20:16.907 TRACE [appC,df2861aa9a8c8fd6,df2861aa9a8c8fd6] 14872 --- [http-nio-9093-exec-4] o.s.web.method.HandlerMethod             : Arguments: []
+2021-08-23 16:20:16.907  INFO [appC,df2861aa9a8c8fd6,df2861aa9a8c8fd6] 14872 --- [http-nio-9093-exec-4] c.e.a.web.JmsMessageProducerController   : produce-jms-message called
+2021-08-23 16:20:17.321 DEBUG [appC,df2861aa9a8c8fd6,df2861aa9a8c8fd6] 14872 --- [http-nio-9093-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2021-08-23 16:20:17.322 DEBUG [appC,df2861aa9a8c8fd6,df2861aa9a8c8fd6] 14872 --- [http-nio-9093-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Nothing to write: null body
+2021-08-23 16:20:17.322 TRACE [appC,df2861aa9a8c8fd6,df2861aa9a8c8fd6] 14872 --- [http-nio-9093-exec-4] s.w.s.m.m.a.RequestMappingHandlerAdapter : Applying default cacheSeconds=-1
+2021-08-23 16:20:17.323 TRACE [appC,df2861aa9a8c8fd6,df2861aa9a8c8fd6] 14872 --- [http-nio-9093-exec-4] o.s.web.servlet.DispatcherServlet        : No view rendering, null ModelAndView returned.
+2021-08-23 16:20:17.323 DEBUG [appC,df2861aa9a8c8fd6,df2861aa9a8c8fd6] 14872 --- [http-nio-9093-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK, headers={}
+2021-08-23 16:20:17.743 DEBUG [appC,,] 14872 --- [AsyncReporter{RestTemplateSender{http://127.0.0.1:9411/api/v2/spans}}] org.springframework.web.HttpLogging      : HTTP POST http://127.0.0.1:9411/api/v2/spans
+2021-08-23 16:20:17.744 DEBUG [appC,,] 14872 --- [AsyncReporter{RestTemplateSender{http://127.0.0.1:9411/api/v2/spans}}] org.springframework.web.HttpLogging      : Accept=[text/plain, application/json, application/*+json, */*]
+2021-08-23 16:20:17.744 DEBUG [appC,,] 14872 --- [AsyncReporter{RestTemplateSender{http://127.0.0.1:9411/api/v2/spans}}] org.springframework.web.HttpLogging      : Writing [[B@5a0332c6] as "application/json"
+2021-08-23 16:20:17.753 DEBUG [appC,,] 14872 --- [AsyncReporter{RestTemplateSender{http://127.0.0.1:9411/api/v2/spans}}] org.springframework.web.HttpLogging      : Response 202 ACCEPTED
+2021-08-23 16:20:21.379 TRACE [appC,295b28861ab94fb6,295b28861ab94fb6] 14872 --- [http-nio-9093-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/produce-jms-message", parameters={}, headers={host:[localhost:9093], connection:[Keep-Alive], user-agent:[Apache-HttpClient/4.5.13 (Java/11.0.11)], accept-encoding:[gzip,deflate]} in DispatcherServlet 'dispatcherServlet'
+2021-08-23 16:20:21.380 TRACE [appC,295b28861ab94fb6,295b28861ab94fb6] 14872 --- [http-nio-9093-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.appc.web.JmsMessageProducerController#produceJmsMessage()
+2021-08-23 16:20:21.380 TRACE [appC,295b28861ab94fb6,295b28861ab94fb6] 14872 --- [http-nio-9093-exec-5] o.s.web.method.HandlerMethod             : Arguments: []
+2021-08-23 16:20:21.381  INFO [appC,295b28861ab94fb6,295b28861ab94fb6] 14872 --- [http-nio-9093-exec-5] c.e.a.web.JmsMessageProducerController   : produce-jms-message called
+2021-08-23 16:20:21.385 DEBUG [appC,295b28861ab94fb6,295b28861ab94fb6] 14872 --- [http-nio-9093-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2021-08-23 16:20:21.385 DEBUG [appC,295b28861ab94fb6,295b28861ab94fb6] 14872 --- [http-nio-9093-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Nothing to write: null body
+2021-08-23 16:20:21.386 TRACE [appC,295b28861ab94fb6,295b28861ab94fb6] 14872 --- [http-nio-9093-exec-5] s.w.s.m.m.a.RequestMappingHandlerAdapter : Applying default cacheSeconds=-1
+2021-08-23 16:20:21.386 TRACE [appC,295b28861ab94fb6,295b28861ab94fb6] 14872 --- [http-nio-9093-exec-5] o.s.web.servlet.DispatcherServlet        : No view rendering, null ModelAndView returned.
+2021-08-23 16:20:21.386 DEBUG [appC,295b28861ab94fb6,295b28861ab94fb6] 14872 --- [http-nio-9093-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK, headers={}
+2021-08-23 16:20:21.786 DEBUG [appC,,] 14872 --- [AsyncReporter{RestTemplateSender{http://127.0.0.1:9411/api/v2/spans}}] org.springframework.web.HttpLogging      : HTTP POST http://127.0.0.1:9411/api/v2/spans
+2021-08-23 16:20:21.787 DEBUG [appC,,] 14872 --- [AsyncReporter{RestTemplateSender{http://127.0.0.1:9411/api/v2/spans}}] org.springframework.web.HttpLogging      : Accept=[text/plain, application/json, application/*+json, */*]
+2021-08-23 16:20:21.787 DEBUG [appC,,] 14872 --- [AsyncReporter{RestTemplateSender{http://127.0.0.1:9411/api/v2/spans}}] org.springframework.web.HttpLogging      : Writing [[B@7a02b82c] as "application/json"
+2021-08-23 16:20:21.808 DEBUG [appC,,] 14872 --- [AsyncReporter{RestTemplateSender{http://127.0.0.1:9411/api/v2/spans}}] org.springframework.web.HttpLogging      : Response 202 ACCEPTED
+2021-08-23 16:34:11.510  INFO [appC,,] 14872 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-08-23 16:34:14.405 DEBUG [appC,,] 14872 --- [AsyncReporter{RestTemplateSender{http://127.0.0.1:9411/api/v2/spans}}] org.springframework.web.HttpLogging      : HTTP POST http://127.0.0.1:9411/api/v2/spans
+2021-08-23 16:34:14.406 DEBUG [appC,,] 14872 --- [AsyncReporter{RestTemplateSender{http://127.0.0.1:9411/api/v2/spans}}] org.springframework.web.HttpLogging      : Accept=[text/plain, application/json, application/*+json, */*]
+2021-08-23 16:34:14.406 DEBUG [appC,,] 14872 --- [AsyncReporter{RestTemplateSender{http://127.0.0.1:9411/api/v2/spans}}] org.springframework.web.HttpLogging      : Writing [[B@7fc97d76] as "application/json"
+2021-08-23 16:34:14.412 DEBUG [appC,,] 14872 --- [AsyncReporter{RestTemplateSender{http://127.0.0.1:9411/api/v2/spans}}] org.springframework.web.HttpLogging      : Response 202 ACCEPTED
+2021-08-23 16:34:37.894  INFO [appC,,] 1164 --- [main] com.example.appc.AppCApplication         : Starting AppCApplication using Java 1.8.0_262 on MURATONGUDU with PID 1164 (C:\JAVA\projects\poc\tracing-zipkin\appC\target\classes started by murat.ongudu in C:\JAVA\projects\poc\tracing-zipkin\appC)
+2021-08-23 16:34:37.900  INFO [appC,,] 1164 --- [main] com.example.appc.AppCApplication         : No active profile set, falling back to default profiles: default
+2021-08-23 16:34:39.794  INFO [appC,,] 1164 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=8a861d6f-2666-311d-b5e8-0358226b9ea5
+2021-08-23 16:34:40.805  INFO [appC,,] 1164 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9093 (http)
+2021-08-23 16:34:40.829  INFO [appC,,] 1164 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-08-23 16:34:40.830  INFO [appC,,] 1164 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.45]
+2021-08-23 16:34:41.043  INFO [appC,,] 1164 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-08-23 16:34:41.044  INFO [appC,,] 1164 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3000 ms
+2021-08-23 16:34:46.131  INFO [appC,,] 1164 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-08-23 16:34:46.220 DEBUG [appC,,] 1164 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2021-08-23 16:34:46.372 TRACE [appC,,] 1164 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	c.e.a.w.JmsMessageProducerController:
+	{GET [/produce-jms-message]}: produceJmsMessage()
+2021-08-23 16:34:46.375 TRACE [appC,,] 1164 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	c.e.a.w.KafkaMessageProducerController:
+	{GET [/produce-kafka-message]}: produceKafkaMessage()
+2021-08-23 16:34:46.377 TRACE [appC,,] 1164 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	c.e.a.w.PingByWebClientController:
+	{GET [/webclient/ping-d-and-e]}: pingDAndE()
+	{GET [/webclient/ping-d]}: pingD()
+2021-08-23 16:34:46.382 TRACE [appC,,] 1164 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	c.e.a.w.PingController:
+	{GET [/ping-d-by-rest-template-exchange]}: pingDByRestTemplateExchange()
+	{GET [/ping-and-tag]}: pingAndTag(String)
+	{GET [/ping-with-new-span]}: pingWithNewSpan()
+	{GET [/ping]}: ping()
+	{GET [/ping-for-object]}: pingForObject()
+	{GET [/ping-d-and-e]}: pingDAndE()
+	{GET [/ping-d]}: pingD()
+2021-08-23 16:34:46.388 TRACE [appC,,] 1164 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	c.e.a.w.PingWithBaggageController:
+	{GET [/ping-d-and-e-with-baggage]}: pingDAndEWithBaggage()
+	{GET [/ping-d-with-baggage]}: pingDWithBaggage()
+2021-08-23 16:34:46.389 TRACE [appC,,] 1164 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	c.e.a.w.TestLogController:
+	{GET [/test/log]}: log()
+2021-08-23 16:34:46.395 TRACE [appC,,] 1164 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 
+	o.s.b.a.w.s.e.BasicErrorController:
+	{ [/error]}: error(HttpServletRequest)
+	{ [/error], produces [text/html]}: errorHtml(HttpServletRequest,HttpServletResponse)
+2021-08-23 16:34:46.402 DEBUG [appC,,] 1164 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 16 mappings in 'requestMappingHandlerMapping'
+2021-08-23 16:34:46.489 DEBUG [appC,,] 1164 --- [main] o.s.w.s.h.BeanNameUrlHandlerMapping      : Detected 0 mappings in 'beanNameHandlerMapping'
+2021-08-23 16:34:46.503 TRACE [appC,,] 1164 --- [main] o.s.w.s.f.support.RouterFunctionMapping  : 0 RouterFunction(s) in 'routerFunctionMapping'
+2021-08-23 16:34:46.538 TRACE [appC,,] 1164 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped [/webjars/**] onto ResourceHttpRequestHandler [Classpath [META-INF/resources/webjars/]]
+2021-08-23 16:34:46.539 TRACE [appC,,] 1164 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped [/**] onto ResourceHttpRequestHandler [Classpath [META-INF/resources/], Classpath [resources/], Classpath [static/], Classpath [public/], ServletContext [/]]
+2021-08-23 16:34:46.540 DEBUG [appC,,] 1164 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2021-08-23 16:34:46.570 DEBUG [appC,,] 1164 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2021-08-23 16:34:49.739  INFO [appC,,] 1164 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9093 (http) with context path ''
+2021-08-23 16:34:52.286  INFO [appC,,] 1164 --- [main] com.example.appc.AppCApplication         : Started AppCApplication in 17.368 seconds (JVM running for 20.267)
+2021-08-23 16:36:10.190  INFO [appC,,] 1164 --- [http-nio-9093-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-08-23 16:36:10.190  INFO [appC,,] 1164 --- [http-nio-9093-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-08-23 16:36:10.191 TRACE [appC,,] 1164 --- [http-nio-9093-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.multipart.support.StandardServletMultipartResolver@7050fbbe
+2021-08-23 16:36:10.191 TRACE [appC,,] 1164 --- [http-nio-9093-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.i18n.AcceptHeaderLocaleResolver@588ce83d
+2021-08-23 16:36:10.191 TRACE [appC,,] 1164 --- [http-nio-9093-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.theme.FixedThemeResolver@4206251a
+2021-08-23 16:36:10.194 TRACE [appC,,] 1164 --- [http-nio-9093-exec-1] o.s.web.servlet.DispatcherServlet        : Detected DefaultRequestToViewNameTranslator
+2021-08-23 16:36:10.195 TRACE [appC,,] 1164 --- [http-nio-9093-exec-1] o.s.web.servlet.DispatcherServlet        : Detected SessionFlashMapManager
+2021-08-23 16:36:10.196 DEBUG [appC,,] 1164 --- [http-nio-9093-exec-1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='true': request parameters and headers will be shown which may lead to unsafe logging of potentially sensitive data
+2021-08-23 16:36:10.196  INFO [appC,,] 1164 --- [http-nio-9093-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 5 ms
+2021-08-23 16:36:10.247 TRACE [appC,e898391775e2b4ed,e898391775e2b4ed] 1164 --- [http-nio-9093-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/ping-d-and-e", parameters={}, headers={host:[localhost:9093], connection:[Keep-Alive], user-agent:[Apache-HttpClient/4.5.13 (Java/11.0.11)], accept-encoding:[gzip,deflate]} in DispatcherServlet 'dispatcherServlet'
+2021-08-23 16:36:10.255 TRACE [appC,e898391775e2b4ed,e898391775e2b4ed] 1164 --- [http-nio-9093-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.appc.web.PingController#pingDAndE()
+2021-08-23 16:36:10.278 TRACE [appC,e898391775e2b4ed,e898391775e2b4ed] 1164 --- [http-nio-9093-exec-1] o.s.web.method.HandlerMethod             : Arguments: []
+2021-08-23 16:36:10.289  INFO [appC,e898391775e2b4ed,e898391775e2b4ed] 1164 --- [http-nio-9093-exec-1] com.example.appc.web.PingController      : ping-d-and-e called
+2021-08-23 16:36:10.325 DEBUG [appC,e898391775e2b4ed,e898391775e2b4ed] 1164 --- [http-nio-9093-exec-1] o.s.web.client.RestTemplate              : HTTP GET http://localhost:9094/ping-e
+2021-08-23 16:36:10.333 DEBUG [appC,e898391775e2b4ed,e898391775e2b4ed] 1164 --- [http-nio-9093-exec-1] o.s.web.client.RestTemplate              : Accept=[text/plain, application/json, application/*+json, */*]
+2021-08-23 16:36:10.669 DEBUG [appC,e898391775e2b4ed,e898391775e2b4ed] 1164 --- [http-nio-9093-exec-1] o.s.web.client.RestTemplate              : Response 200 OK
+2021-08-23 16:36:10.671 DEBUG [appC,e898391775e2b4ed,e898391775e2b4ed] 1164 --- [http-nio-9093-exec-1] o.s.web.client.RestTemplate              : Reading to [java.lang.String] as "text/plain;charset=UTF-8"
+2021-08-23 16:36:10.702 DEBUG [appC,e898391775e2b4ed,e898391775e2b4ed] 1164 --- [http-nio-9093-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Using 'text/plain', given [*/*] and supported [text/plain, */*, text/plain, */*, application/json, application/*+json, application/json, application/*+json]
+2021-08-23 16:36:10.703 TRACE [appC,e898391775e2b4ed,e898391775e2b4ed] 1164 --- [http-nio-9093-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Writing ["pong"]
+2021-08-23 16:36:10.722 TRACE [appC,e898391775e2b4ed,e898391775e2b4ed] 1164 --- [http-nio-9093-exec-1] s.w.s.m.m.a.RequestMappingHandlerAdapter : Applying default cacheSeconds=-1
+2021-08-23 16:36:10.722 TRACE [appC,e898391775e2b4ed,e898391775e2b4ed] 1164 --- [http-nio-9093-exec-1] o.s.web.servlet.DispatcherServlet        : No view rendering, null ModelAndView returned.
+2021-08-23 16:36:10.725 DEBUG [appC,e898391775e2b4ed,e898391775e2b4ed] 1164 --- [http-nio-9093-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK, headers={Content-Type:[text/plain;charset=UTF-8], Content-Length:[4], Date:[Mon, 23 Aug 2021 13:36:10 GMT], Keep-Alive:[timeout=60], Connection:[keep-alive]}
+2021-08-23 16:44:01.612 TRACE [appC,9518ce3f835115e9,9518ce3f835115e9] 1164 --- [http-nio-9093-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/ping-d-and-e", parameters={}, headers={host:[localhost:9093], connection:[Keep-Alive], user-agent:[Apache-HttpClient/4.5.13 (Java/11.0.11)], accept-encoding:[gzip,deflate]} in DispatcherServlet 'dispatcherServlet'
+2021-08-23 16:44:01.612 TRACE [appC,9518ce3f835115e9,9518ce3f835115e9] 1164 --- [http-nio-9093-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.appc.web.PingController#pingDAndE()
+2021-08-23 16:44:01.613 TRACE [appC,9518ce3f835115e9,9518ce3f835115e9] 1164 --- [http-nio-9093-exec-3] o.s.web.method.HandlerMethod             : Arguments: []
+2021-08-23 16:44:01.613  INFO [appC,9518ce3f835115e9,9518ce3f835115e9] 1164 --- [http-nio-9093-exec-3] com.example.appc.web.PingController      : ping-d-and-e called
+2021-08-23 16:44:01.613 DEBUG [appC,9518ce3f835115e9,9518ce3f835115e9] 1164 --- [http-nio-9093-exec-3] o.s.web.client.RestTemplate              : HTTP GET http://localhost:9094/ping-e
+2021-08-23 16:44:01.614 DEBUG [appC,9518ce3f835115e9,9518ce3f835115e9] 1164 --- [http-nio-9093-exec-3] o.s.web.client.RestTemplate              : Accept=[text/plain, application/json, application/*+json, */*]
+2021-08-23 16:44:01.718 DEBUG [appC,9518ce3f835115e9,9518ce3f835115e9] 1164 --- [http-nio-9093-exec-3] o.s.web.client.RestTemplate              : Response 200 OK
+2021-08-23 16:44:01.718 DEBUG [appC,9518ce3f835115e9,9518ce3f835115e9] 1164 --- [http-nio-9093-exec-3] o.s.web.client.RestTemplate              : Reading to [java.lang.String] as "text/plain;charset=UTF-8"
+2021-08-23 16:44:01.720 DEBUG [appC,9518ce3f835115e9,9518ce3f835115e9] 1164 --- [http-nio-9093-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Using 'text/plain', given [*/*] and supported [text/plain, */*, text/plain, */*, application/json, application/*+json, application/json, application/*+json]
+2021-08-23 16:44:01.720 TRACE [appC,9518ce3f835115e9,9518ce3f835115e9] 1164 --- [http-nio-9093-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Writing ["pong"]
+2021-08-23 16:44:01.721 TRACE [appC,9518ce3f835115e9,9518ce3f835115e9] 1164 --- [http-nio-9093-exec-3] s.w.s.m.m.a.RequestMappingHandlerAdapter : Applying default cacheSeconds=-1
+2021-08-23 16:44:01.722 TRACE [appC,9518ce3f835115e9,9518ce3f835115e9] 1164 --- [http-nio-9093-exec-3] o.s.web.servlet.DispatcherServlet        : No view rendering, null ModelAndView returned.
+2021-08-23 16:44:01.722 DEBUG [appC,9518ce3f835115e9,9518ce3f835115e9] 1164 --- [http-nio-9093-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK, headers={Content-Type:[text/plain;charset=UTF-8], Content-Length:[4], Date:[Mon, 23 Aug 2021 13:44:01 GMT], Keep-Alive:[timeout=60], Connection:[keep-alive]}
+2021-08-23 16:49:36.142 TRACE [appC,02e527022b2fea7c,02e527022b2fea7c] 1164 --- [http-nio-9093-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/produce-jms-message", parameters={}, headers={host:[localhost:9093], connection:[Keep-Alive], user-agent:[Apache-HttpClient/4.5.13 (Java/11.0.11)], accept-encoding:[gzip,deflate]} in DispatcherServlet 'dispatcherServlet'
+2021-08-23 16:49:36.142 TRACE [appC,02e527022b2fea7c,02e527022b2fea7c] 1164 --- [http-nio-9093-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.appc.web.JmsMessageProducerController#produceJmsMessage()
+2021-08-23 16:49:36.143 TRACE [appC,02e527022b2fea7c,02e527022b2fea7c] 1164 --- [http-nio-9093-exec-5] o.s.web.method.HandlerMethod             : Arguments: []
+2021-08-23 16:49:36.143  INFO [appC,02e527022b2fea7c,02e527022b2fea7c] 1164 --- [http-nio-9093-exec-5] c.e.a.web.JmsMessageProducerController   : produce-jms-message called
+2021-08-23 16:49:36.417 DEBUG [appC,02e527022b2fea7c,02e527022b2fea7c] 1164 --- [http-nio-9093-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2021-08-23 16:49:36.417 DEBUG [appC,02e527022b2fea7c,02e527022b2fea7c] 1164 --- [http-nio-9093-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Nothing to write: null body
+2021-08-23 16:49:36.417 TRACE [appC,02e527022b2fea7c,02e527022b2fea7c] 1164 --- [http-nio-9093-exec-5] s.w.s.m.m.a.RequestMappingHandlerAdapter : Applying default cacheSeconds=-1
+2021-08-23 16:49:36.417 TRACE [appC,02e527022b2fea7c,02e527022b2fea7c] 1164 --- [http-nio-9093-exec-5] o.s.web.servlet.DispatcherServlet        : No view rendering, null ModelAndView returned.
+2021-08-23 16:49:36.417 DEBUG [appC,02e527022b2fea7c,02e527022b2fea7c] 1164 --- [http-nio-9093-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK, headers={}
+2021-08-23 16:49:41.978 TRACE [appC,df7eaaa9f8883c81,df7eaaa9f8883c81] 1164 --- [http-nio-9093-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/produce-jms-message", parameters={}, headers={host:[localhost:9093], connection:[Keep-Alive], user-agent:[Apache-HttpClient/4.5.13 (Java/11.0.11)], accept-encoding:[gzip,deflate]} in DispatcherServlet 'dispatcherServlet'
+2021-08-23 16:49:41.979 TRACE [appC,df7eaaa9f8883c81,df7eaaa9f8883c81] 1164 --- [http-nio-9093-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.appc.web.JmsMessageProducerController#produceJmsMessage()
+2021-08-23 16:49:41.980 TRACE [appC,df7eaaa9f8883c81,df7eaaa9f8883c81] 1164 --- [http-nio-9093-exec-6] o.s.web.method.HandlerMethod             : Arguments: []
+2021-08-23 16:49:41.980  INFO [appC,df7eaaa9f8883c81,df7eaaa9f8883c81] 1164 --- [http-nio-9093-exec-6] c.e.a.web.JmsMessageProducerController   : produce-jms-message called
+2021-08-23 16:49:41.984 DEBUG [appC,df7eaaa9f8883c81,df7eaaa9f8883c81] 1164 --- [http-nio-9093-exec-6] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2021-08-23 16:49:41.984 DEBUG [appC,df7eaaa9f8883c81,df7eaaa9f8883c81] 1164 --- [http-nio-9093-exec-6] m.m.a.RequestResponseBodyMethodProcessor : Nothing to write: null body
+2021-08-23 16:49:41.984 TRACE [appC,df7eaaa9f8883c81,df7eaaa9f8883c81] 1164 --- [http-nio-9093-exec-6] s.w.s.m.m.a.RequestMappingHandlerAdapter : Applying default cacheSeconds=-1
+2021-08-23 16:49:41.984 TRACE [appC,df7eaaa9f8883c81,df7eaaa9f8883c81] 1164 --- [http-nio-9093-exec-6] o.s.web.servlet.DispatcherServlet        : No view rendering, null ModelAndView returned.
+2021-08-23 16:49:41.985 DEBUG [appC,df7eaaa9f8883c81,df7eaaa9f8883c81] 1164 --- [http-nio-9093-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK, headers={}
+2021-08-23 16:50:03.727 TRACE [appC,8e96d5d9b90a2cfb,8e96d5d9b90a2cfb] 1164 --- [http-nio-9093-exec-8] o.s.web.servlet.DispatcherServlet        : GET "/produce-jms-message", parameters={}, headers={host:[localhost:9093], connection:[Keep-Alive], user-agent:[Apache-HttpClient/4.5.13 (Java/11.0.11)], accept-encoding:[gzip,deflate]} in DispatcherServlet 'dispatcherServlet'
+2021-08-23 16:50:03.728 TRACE [appC,8e96d5d9b90a2cfb,8e96d5d9b90a2cfb] 1164 --- [http-nio-9093-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.appc.web.JmsMessageProducerController#produceJmsMessage()
+2021-08-23 16:50:03.728 TRACE [appC,8e96d5d9b90a2cfb,8e96d5d9b90a2cfb] 1164 --- [http-nio-9093-exec-8] o.s.web.method.HandlerMethod             : Arguments: []
+2021-08-23 16:50:03.728  INFO [appC,8e96d5d9b90a2cfb,8e96d5d9b90a2cfb] 1164 --- [http-nio-9093-exec-8] c.e.a.web.JmsMessageProducerController   : produce-jms-message called
+2021-08-23 16:50:03.732 DEBUG [appC,8e96d5d9b90a2cfb,8e96d5d9b90a2cfb] 1164 --- [http-nio-9093-exec-8] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2021-08-23 16:50:03.732 DEBUG [appC,8e96d5d9b90a2cfb,8e96d5d9b90a2cfb] 1164 --- [http-nio-9093-exec-8] m.m.a.RequestResponseBodyMethodProcessor : Nothing to write: null body
+2021-08-23 16:50:03.732 TRACE [appC,8e96d5d9b90a2cfb,8e96d5d9b90a2cfb] 1164 --- [http-nio-9093-exec-8] s.w.s.m.m.a.RequestMappingHandlerAdapter : Applying default cacheSeconds=-1
+2021-08-23 16:50:03.732 TRACE [appC,8e96d5d9b90a2cfb,8e96d5d9b90a2cfb] 1164 --- [http-nio-9093-exec-8] o.s.web.servlet.DispatcherServlet        : No view rendering, null ModelAndView returned.
+2021-08-23 16:50:03.732 DEBUG [appC,8e96d5d9b90a2cfb,8e96d5d9b90a2cfb] 1164 --- [http-nio-9093-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK, headers={}
+2021-08-23 16:59:53.943 TRACE [appC,a43bd4a915af80fe,a43bd4a915af80fe] 1164 --- [http-nio-9093-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/ping-d-and-e", parameters={}, headers={host:[localhost:9093], connection:[Keep-Alive], user-agent:[Apache-HttpClient/4.5.13 (Java/11.0.11)], accept-encoding:[gzip,deflate]} in DispatcherServlet 'dispatcherServlet'
+2021-08-23 16:59:53.943 TRACE [appC,a43bd4a915af80fe,a43bd4a915af80fe] 1164 --- [http-nio-9093-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.appc.web.PingController#pingDAndE()
+2021-08-23 16:59:53.943 TRACE [appC,a43bd4a915af80fe,a43bd4a915af80fe] 1164 --- [http-nio-9093-exec-1] o.s.web.method.HandlerMethod             : Arguments: []
+2021-08-23 16:59:53.943  INFO [appC,a43bd4a915af80fe,a43bd4a915af80fe] 1164 --- [http-nio-9093-exec-1] com.example.appc.web.PingController      : ping-d-and-e called
+2021-08-23 16:59:53.944 DEBUG [appC,a43bd4a915af80fe,a43bd4a915af80fe] 1164 --- [http-nio-9093-exec-1] o.s.web.client.RestTemplate              : HTTP GET http://localhost:9094/ping-e
+2021-08-23 16:59:53.944 DEBUG [appC,a43bd4a915af80fe,a43bd4a915af80fe] 1164 --- [http-nio-9093-exec-1] o.s.web.client.RestTemplate              : Accept=[text/plain, application/json, application/*+json, */*]
+2021-08-23 16:59:53.962 DEBUG [appC,a43bd4a915af80fe,a43bd4a915af80fe] 1164 --- [http-nio-9093-exec-1] o.s.web.client.RestTemplate              : Response 200 OK
+2021-08-23 16:59:53.962 DEBUG [appC,a43bd4a915af80fe,a43bd4a915af80fe] 1164 --- [http-nio-9093-exec-1] o.s.web.client.RestTemplate              : Reading to [java.lang.String] as "text/plain;charset=UTF-8"
+2021-08-23 16:59:53.963 DEBUG [appC,a43bd4a915af80fe,a43bd4a915af80fe] 1164 --- [http-nio-9093-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Using 'text/plain', given [*/*] and supported [text/plain, */*, text/plain, */*, application/json, application/*+json, application/json, application/*+json]
+2021-08-23 16:59:53.963 TRACE [appC,a43bd4a915af80fe,a43bd4a915af80fe] 1164 --- [http-nio-9093-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Writing ["pong"]
+2021-08-23 16:59:53.964 TRACE [appC,a43bd4a915af80fe,a43bd4a915af80fe] 1164 --- [http-nio-9093-exec-1] s.w.s.m.m.a.RequestMappingHandlerAdapter : Applying default cacheSeconds=-1
+2021-08-23 16:59:53.964 TRACE [appC,a43bd4a915af80fe,a43bd4a915af80fe] 1164 --- [http-nio-9093-exec-1] o.s.web.servlet.DispatcherServlet        : No view rendering, null ModelAndView returned.
+2021-08-23 16:59:53.964 DEBUG [appC,a43bd4a915af80fe,a43bd4a915af80fe] 1164 --- [http-nio-9093-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK, headers={Content-Type:[text/plain;charset=UTF-8], Content-Length:[4], Date:[Mon, 23 Aug 2021 13:59:53 GMT], Keep-Alive:[timeout=60], Connection:[keep-alive]}
+2021-08-23 17:04:56.588 TRACE [appC,b05ac9957a304193,b05ac9957a304193] 1164 --- [http-nio-9093-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/produce-jms-message", parameters={}, headers={host:[localhost:9093], connection:[Keep-Alive], user-agent:[Apache-HttpClient/4.5.13 (Java/11.0.11)], accept-encoding:[gzip,deflate]} in DispatcherServlet 'dispatcherServlet'
+2021-08-23 17:04:56.589 TRACE [appC,b05ac9957a304193,b05ac9957a304193] 1164 --- [http-nio-9093-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.appc.web.JmsMessageProducerController#produceJmsMessage()
+2021-08-23 17:04:56.589 TRACE [appC,b05ac9957a304193,b05ac9957a304193] 1164 --- [http-nio-9093-exec-3] o.s.web.method.HandlerMethod             : Arguments: []
+2021-08-23 17:04:56.589  INFO [appC,b05ac9957a304193,b05ac9957a304193] 1164 --- [http-nio-9093-exec-3] c.e.a.web.JmsMessageProducerController   : produce-jms-message called
+2021-08-23 17:04:56.597 DEBUG [appC,b05ac9957a304193,b05ac9957a304193] 1164 --- [http-nio-9093-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/json, application/*+json]
+2021-08-23 17:04:56.597 DEBUG [appC,b05ac9957a304193,b05ac9957a304193] 1164 --- [http-nio-9093-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Nothing to write: null body
+2021-08-23 17:04:56.597 TRACE [appC,b05ac9957a304193,b05ac9957a304193] 1164 --- [http-nio-9093-exec-3] s.w.s.m.m.a.RequestMappingHandlerAdapter : Applying default cacheSeconds=-1
+2021-08-23 17:04:56.598 TRACE [appC,b05ac9957a304193,b05ac9957a304193] 1164 --- [http-nio-9093-exec-3] o.s.web.servlet.DispatcherServlet        : No view rendering, null ModelAndView returned.
+2021-08-23 17:04:56.598 DEBUG [appC,b05ac9957a304193,b05ac9957a304193] 1164 --- [http-nio-9093-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK, headers={}
+2021-08-23 17:12:17.419 TRACE [appC,8ed3d82cacab81ce,8ed3d82cacab81ce] 1164 --- [http-nio-9093-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/ping-d-and-e", parameters={}, headers={host:[localhost:9093], connection:[Keep-Alive], user-agent:[Apache-HttpClient/4.5.13 (Java/11.0.11)], accept-encoding:[gzip,deflate]} in DispatcherServlet 'dispatcherServlet'
+2021-08-23 17:12:17.420 TRACE [appC,8ed3d82cacab81ce,8ed3d82cacab81ce] 1164 --- [http-nio-9093-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.appc.web.PingController#pingDAndE()
+2021-08-23 17:12:17.420 TRACE [appC,8ed3d82cacab81ce,8ed3d82cacab81ce] 1164 --- [http-nio-9093-exec-5] o.s.web.method.HandlerMethod             : Arguments: []
+2021-08-23 17:12:17.420  INFO [appC,8ed3d82cacab81ce,8ed3d82cacab81ce] 1164 --- [http-nio-9093-exec-5] com.example.appc.web.PingController      : ping-d-and-e called
+2021-08-23 17:12:17.420 DEBUG [appC,8ed3d82cacab81ce,8ed3d82cacab81ce] 1164 --- [http-nio-9093-exec-5] o.s.web.client.RestTemplate              : HTTP GET http://localhost:9094/ping-e
+2021-08-23 17:12:17.421 DEBUG [appC,8ed3d82cacab81ce,8ed3d82cacab81ce] 1164 --- [http-nio-9093-exec-5] o.s.web.client.RestTemplate              : Accept=[text/plain, application/json, application/*+json, */*]
+2021-08-23 17:12:17.434 DEBUG [appC,8ed3d82cacab81ce,8ed3d82cacab81ce] 1164 --- [http-nio-9093-exec-5] o.s.web.client.RestTemplate              : Response 200 OK
+2021-08-23 17:12:17.435 DEBUG [appC,8ed3d82cacab81ce,8ed3d82cacab81ce] 1164 --- [http-nio-9093-exec-5] o.s.web.client.RestTemplate              : Reading to [java.lang.String] as "text/plain;charset=UTF-8"
+2021-08-23 17:12:17.436 DEBUG [appC,8ed3d82cacab81ce,8ed3d82cacab81ce] 1164 --- [http-nio-9093-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Using 'text/plain', given [*/*] and supported [text/plain, */*, text/plain, */*, application/json, application/*+json, application/json, application/*+json]
+2021-08-23 17:12:17.436 TRACE [appC,8ed3d82cacab81ce,8ed3d82cacab81ce] 1164 --- [http-nio-9093-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Writing ["pong"]
+2021-08-23 17:12:17.437 TRACE [appC,8ed3d82cacab81ce,8ed3d82cacab81ce] 1164 --- [http-nio-9093-exec-5] s.w.s.m.m.a.RequestMappingHandlerAdapter : Applying default cacheSeconds=-1
+2021-08-23 17:12:17.437 TRACE [appC,8ed3d82cacab81ce,8ed3d82cacab81ce] 1164 --- [http-nio-9093-exec-5] o.s.web.servlet.DispatcherServlet        : No view rendering, null ModelAndView returned.
+2021-08-23 17:12:17.437 DEBUG [appC,8ed3d82cacab81ce,8ed3d82cacab81ce] 1164 --- [http-nio-9093-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK, headers={Content-Type:[text/plain;charset=UTF-8], Content-Length:[4], Date:[Mon, 23 Aug 2021 14:12:17 GMT], Keep-Alive:[timeout=60], Connection:[keep-alive]}
+2021-08-23 17:26:56.944  INFO [appC,,] 1164 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'

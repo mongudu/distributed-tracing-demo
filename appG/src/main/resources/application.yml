@@ -1,0 +1,25 @@
+server:
+  port: 9097
+spring:
+  application:
+    name: appG
+  zipkin:
+    base-url: http://127.0.0.1:9411
+    enabled: true
+    sender:
+      type: web
+  mvc:
+    log-request-details: true
+  kafka:
+    consumer:
+      auto-offset-reset: earliest
+      bootstrap-servers: localhost:9092
+      group-id: appG
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+
+logging:
+  level:
+    org:
+      springframework:
+        web: TRACE

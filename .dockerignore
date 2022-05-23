@@ -1,0 +1,25 @@
+# Java
+**/target
+
+# Idea Intellij
+.idea
+**/*.iml
+*.iml
+*.iws
+*.ipr
+
+# Git
+.git
+.gitignore
+
+README.md
+
+# Log file
+*.log
+
+# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+hs_err_pid*
+
+
+
+

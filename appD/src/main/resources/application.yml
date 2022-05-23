@@ -1,0 +1,25 @@
+server:
+  port: 9094
+spring:
+  application:
+    name: appD
+  zipkin:
+    base-url: http://127.0.0.1:9411
+    enabled: true
+    sender:
+      type: web
+  sleuth:
+    baggage:
+      remoteFields:
+        - country-code
+      tagFields:
+        - country-code
+      correlation-fields:
+        - country-code
+  mvc:
+    log-request-details: true
+logging:
+  level:
+    org:
+      springframework:
+        web: TRACE
