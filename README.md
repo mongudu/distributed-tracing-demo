@@ -1,4 +1,4 @@
-# Distributed tracing demo for async and sync flows (HTTP, JMS, Kafka)
+# Distributed tracing demos for async and sync flows (HTTP, JMS, Kafka)
 
 Distributed tracing demos in a tech stack which contains web applications and a message broker (ActiveMQ) and an event streaming platform (Kafka).
 
